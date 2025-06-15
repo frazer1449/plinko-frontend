@@ -1,0 +1,33 @@
+.homepage {
+    padding-top: 80px; /* leave space for fixed NavBar */
+    min-height: calc(100vh - 160px); /* full height minus NavBar and Footer */
+    background-color: #e3f2fd;
+    display: flex;
+    flex-direction: row; /* horizontal layout */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    box-sizing: border-box;
+    gap: 2rem; /* spacing between control panel and game board */
+  }
+  
+  /* Control Panel on left */
+  .control-center {
+    flex: 0 0 300px; /* fixed width */
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 800px;
+  }
+  
+  /* Game Board on right */
+  .game-board {
+    flex: 1; /* take remaining space */
+    max-width: 900px;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 800px;
+  }

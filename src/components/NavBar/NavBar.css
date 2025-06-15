@@ -1,0 +1,63 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Container for right-side buttons */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  padding-right: 4rem;
+}
+
+/* Shared styles for buttons & links except logo */
+nav button,
+nav a:not(.logo) {
+  background-color: #4CAF50;
+  border: none;
+  padding: 0 1rem; /* only horizontal padding now */
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+
+  /* 🔧 Normalize sizes */
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover state for both buttons and links */
+nav button:hover,
+nav a:not(.logo):hover {
+  background-color: #45a049;
+}
+
+/* Focus state (removes browser default focus ring) */
+nav button:focus,
+nav a:not(.logo):focus {
+  outline: none;
+  box-shadow: none;
+}
