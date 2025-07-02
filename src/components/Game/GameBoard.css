@@ -1,0 +1,44 @@
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .peg-row {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 40px;
+  }
+  
+  .peg {
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+  }
+
+  .slots-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  
+  .slot {
+    width: 36px;
+    height: 36px;
+    background-color: #f97316;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

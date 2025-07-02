@@ -61,3 +61,18 @@ nav a:not(.logo):focus {
   outline: none;
   box-shadow: none;
 }
+
+.balance {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #2e2e2e;
+  padding: 0.5rem 1rem;
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}

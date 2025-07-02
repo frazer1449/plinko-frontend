@@ -7,9 +7,11 @@ import {useContext} from "react"
 
 export default function NavBar(props){
     const {isLoggedIn, setLoggedIn} = useContext(AuthContext)
+    const {balance } = useContext(AuthContext);
     
     return (<nav>
         <Link to="/" className="logo">Plinko Game</Link>
+        {isLoggedIn && <div className="balance">Balance: ${balance}</div>}
         <div className="nav-buttons">
             {isLoggedIn ? (
                 <>
