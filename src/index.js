@@ -8,7 +8,7 @@ import { AuthContext } from "./context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/plinko-frontend">
     <React.StrictMode>
       <App />
     </React.StrictMode>

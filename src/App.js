@@ -46,8 +46,8 @@ export default function App() {
         />
         <div className="main-content">
           <Routes>
-            <Route path="/" exact element={<HomePage />} />
-            <Route path="/account" exact element={<AccountsPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/account" element={<AccountsPage />} />
           </Routes>
         </div>
         <Footer />

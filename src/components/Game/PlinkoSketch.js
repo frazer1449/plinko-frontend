@@ -1,20 +1,27 @@
-import React, { useRef, useEffect, forwardRef, useImperativeHandle } from "react";
+import React, { useRef, useEffect, useContext, forwardRef, useImperativeHandle } from "react";
 import Matter from "matter-js";
 import Sketch from "react-p5";
 import Ball from "./Entities/Ball";
 import Peg from "./Entities/Peg";
 import Bucket from "./Entities/Bucket";
+import {AuthContext} from "../../context/AuthContext.js";
 
 const { Engine, Body, Bodies, Composite, Events} = Matter;
 
 let world;
 // Make PlinkoSketch a forwardRef component
 const PlinkoSketch = forwardRef(({ rows = 10, betAmount = 0, risk = "medium" }, ref) => {
+  const {balance, setBalance} = useContext(AuthContext);
   const engine = useRef();
   const pegs = useRef([]);
   const buckets = useRef([]);
   const balls = useRef([]);
   const removedBallBodies = useRef(new Set());
+  const betAmountRef = useRef(betAmount);
+
+  useEffect(() => {
+    betAmountRef.current = betAmount;
+  }, [betAmount]);
 
   // Expose dropBall function to parent using ref
   useImperativeHandle(ref, () => ({
@@ -25,7 +32,9 @@ const PlinkoSketch = forwardRef(({ rows = 10, betAmount = 0, risk = "medium" }, 
   }));
 
   useEffect(() => {
+    if (!engine.current || !engine.current.world) return;
     const world = engine.current.world;
+
     Matter.Composite.clear(world, false);
     pegs.current = [];
     buckets.current = [];
@@ -117,7 +126,16 @@ const PlinkoSketch = forwardRef(({ rows = 10, betAmount = 0, risk = "medium" }, 
           balls.current = balls.current.filter(b => b.body !== ball);
 
           const bucketInstance = buckets.current.find(b => b.body === bucket);
-          if (bucketInstance) bucketInstance.triggerShake();
+          if (bucketInstance) {
+            bucketInstance.triggerShake();
+            
+            const multiplier = bucketInstance.multiplier;
+            const winnings = Number(betAmountRef.current) * multiplier;
+            // console.log("typeof betAmount", typeof betAmount); 
+            // console.log("Number(betAmount)", Number(betAmount)); 
+            // console.log("multiplier", multiplier);
+            setBalance(prev => prev + winnings);
+          }
         }
       });
     });
@@ -153,7 +171,6 @@ const PlinkoSketch = forwardRef(({ rows = 10, betAmount = 0, risk = "medium" }, 
   return <Sketch setup={setup} draw={draw} />;
 });
 
-// ✅ Export forwardRef version
 export default PlinkoSketch;
 
 // function to display Multipliers

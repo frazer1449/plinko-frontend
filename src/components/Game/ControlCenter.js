@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import "./ControlCenter.css"
 
-export default function ControlCenter({balance, betAmount, setBetAmount, risk, setRisk, rows, setRows, onBet}){
+export default function ControlCenter({balance, setBalance, betAmount, setBetAmount, risk, setRisk, rows, setRows, onBet}){
     const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
@@ -23,6 +23,7 @@ export default function ControlCenter({balance, betAmount, setBetAmount, risk, s
         }
         
         setError("");
+        setBalance(prev => prev - betAmount);
         onBet();
 
         // TODO: Add logic here

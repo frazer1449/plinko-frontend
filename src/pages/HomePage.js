@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react"
+import React, {useState, useRef, useEffect} from "react"
 import "./HomePage.css"
 import ControlPanel from "../components/Game/ControlCenter.js"
 import PlinkoSketch from "../components/Game/PlinkoSketch.js"
@@ -26,6 +26,7 @@ export default function HomePage(){
                 rows={rows}
                 setRows={setRows}
                 balance={balance}
+                setBalance={setBalance}
                 onBet={onBet}/>
             <PlinkoSketch 
                 betAmount={betAmount}
