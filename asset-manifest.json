@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/plinko-frontend/static/css/main.3a5b230d.css",
-    "main.js": "/plinko-frontend/static/js/main.512ae260.js",
+    "main.js": "/plinko-frontend/static/js/main.71eb61c1.js",
     "static/js/453.5249d4dd.chunk.js": "/plinko-frontend/static/js/453.5249d4dd.chunk.js",
     "static/media/logo.svg": "/plinko-frontend/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/plinko-frontend/index.html",
     "main.3a5b230d.css.map": "/plinko-frontend/static/css/main.3a5b230d.css.map",
-    "main.512ae260.js.map": "/plinko-frontend/static/js/main.512ae260.js.map",
+    "main.71eb61c1.js.map": "/plinko-frontend/static/js/main.71eb61c1.js.map",
     "453.5249d4dd.chunk.js.map": "/plinko-frontend/static/js/453.5249d4dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a5b230d.css",
-    "static/js/main.512ae260.js"
+    "static/js/main.71eb61c1.js"
   ]
 }
